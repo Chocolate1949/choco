@@ -22,5 +22,7 @@ ps -ef|grep nginx|grep -v grep|cut -c 9-15|xargs kill -9
 
 ps x|grep php|grep -v grep |awk ‘{print $1}’|xargs kill -9
 
+# 查看ip信息
+ifconfig|awk -F'addr:| Bcast:| Mask:' '/Mask/{print  $2 $3 $4}'
 
 
